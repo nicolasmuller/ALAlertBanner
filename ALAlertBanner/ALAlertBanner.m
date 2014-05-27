@@ -56,12 +56,12 @@ static CGFloat const kForceHideAnimationDuration = 0.1f;
     #define AL_MULTILINE_TEXT_HEIGHT(text, font, maxSize, mode) [text length] > 0 ? [text boundingRectWithSize:maxSize \
                                                                                                        options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) \
                                                                                                     attributes:nil \
-                                                                                                       context:NULL].size.height : 0.f;
+                                                                                                       context:NULL].size.height + 5 : 0.f;
 #else
     #define AL_SINGLELINE_TEXT_HEIGHT(text, font) [text length] > 0 ? [text sizeWithFont:font].height : 0.f;
     #define AL_MULTILINE_TEXT_HEIGHT(text, font, maxSize, mode) [text length] > 0 ? [text sizeWithFont:font \
                                                                                      constrainedToSize:maxSize \
-                                                                                         lineBreakMode:mode].height : 0.f;
+                                                                                         lineBreakMode:mode].height + 5 : 0.f;
 #endif
 
 # pragma mark -
